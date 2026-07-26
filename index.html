@@ -156,7 +156,7 @@
     </nav>
 
     <div class="ml-auto flex items-center gap-2">
-      <a href="https://havalugue.loksys.com.br/login" class="btn btn-ghost btn-sm font-medium">Entrar</a>
+      <a id="nav-login" href="#" class="btn btn-ghost btn-sm font-medium">Entrar</a>
       <a href="#planos" class="btn btn-primary btn-sm font-semibold shadow-sm shadow-primary/20">
         Ver planos
       </a>
@@ -541,7 +541,7 @@
           </li>
         </ul>
 
-        <a href="#contato" class="btn btn-outline border-base-content/15 hover:bg-base-200 hover:text-base-content hover:border-base-content/25 h-11 font-semibold">
+        <a href="#" data-plan="starter" class="btn btn-outline border-base-content/15 hover:bg-base-200 hover:text-base-content hover:border-base-content/25 h-11 font-semibold">
           Assinar Starter
         </a>
       </article>
@@ -604,7 +604,7 @@
           </li>
         </ul>
 
-        <a href="#contato" class="btn btn-primary h-11 font-semibold shadow-md shadow-primary/25">
+        <a href="#" data-plan="business" class="btn btn-primary h-11 font-semibold shadow-md shadow-primary/25">
           Assinar Business
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
@@ -655,7 +655,7 @@
           </li>
         </ul>
 
-        <a href="#contato" class="btn btn-outline border-base-content/15 hover:bg-base-200 hover:text-base-content hover:border-base-content/25 h-11 font-semibold">
+        <a href="#" data-plan="enterprise" class="btn btn-outline border-base-content/15 hover:bg-base-200 hover:text-base-content hover:border-base-content/25 h-11 font-semibold">
           Falar com vendas
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
         </a>
@@ -776,10 +776,10 @@
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3 lg:flex-col lg:items-stretch lg:min-w-[220px]">
-          <a href="mailto:contato@loksys.com.br" class="btn bg-white text-primary hover:bg-white/90 border-none h-12 font-semibold shadow-md">
+          <a data-contact-email href="#" class="btn bg-white text-primary hover:bg-white/90 border-none h-12 font-semibold shadow-md">
             Falar com vendas
           </a>
-          <a href="mailto:contato@loksys.com.br" class="btn btn-ghost text-white hover:bg-white/15 border border-white/30 h-12 font-semibold">
+          <a data-contact-email href="#" class="btn btn-ghost text-white hover:bg-white/15 border border-white/30 h-12 font-semibold">
             Agendar demo
           </a>
         </div>
@@ -803,7 +803,7 @@
         perder controle. Frota, clientes, contratos e dispositivos em um só lugar.
       </p>
       <div class="mt-5 text-xs text-base-content/45 font-mono">
-        contato@loksys.com.br
+        <span id="footer-email">contato@loksys.com.br</span>
       </div>
     </div>
 
@@ -841,7 +841,69 @@
   </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js" defer></script>
+<!-- ==================================================================== -->
+<!--  MODAL DE CONTRATAÇÃO                                                 -->
+<!-- ==================================================================== -->
+<div x-data="planModal" x-show="open" x-cloak
+     class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
+     @keydown.escape.window="close()">
+  <div class="bg-base-100 rounded-2xl shadow-2xl w-full max-w-md"
+       @click.outside="close()">
+
+    <!-- Cabeçalho -->
+    <div class="flex items-center justify-between p-6 pb-0">
+      <div>
+        <p class="text-xs uppercase tracking-widest font-bold text-base-content/45 mb-1">Plano selecionado</p>
+        <h3 class="text-xl font-bold" x-text="planLabel"></h3>
+      </div>
+      <button @click="close()" class="btn btn-ghost btn-sm btn-circle text-base-content/50">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Sucesso -->
+    <div x-show="success" class="text-center px-8 py-10">
+      <div class="w-16 h-16 bg-success/15 text-success rounded-full flex items-center justify-center mx-auto mb-5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h4 class="font-bold text-lg mb-2">Recebemos seu contato!</h4>
+      <p class="text-base-content/60 text-sm leading-relaxed">Nossa equipe vai entrar em contato em breve para finalizar sua assinatura.</p>
+      <button @click="close()" class="btn btn-primary mt-6 px-8">Fechar</button>
+    </div>
+
+    <!-- Formulário -->
+    <form x-show="!success" @submit.prevent="submit()" class="p-6 space-y-4">
+      <div>
+        <input type="text" x-model="form.name" placeholder="Nome completo" required
+               class="input input-bordered w-full" autocomplete="name">
+      </div>
+      <div>
+        <input type="email" x-model="form.email" placeholder="E-mail" required
+               class="input input-bordered w-full" autocomplete="email">
+      </div>
+      <div>
+        <input type="tel" x-model="form.phone" placeholder="WhatsApp (com DDD)" required
+               class="input input-bordered w-full" autocomplete="tel">
+      </div>
+      <div>
+        <input type="text" x-model="form.company" placeholder="Nome da locadora"
+               class="input input-bordered w-full">
+      </div>
+
+      <div x-show="error" class="text-error text-sm flex items-center gap-2 pt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span x-text="error"></span>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-full h-12 font-semibold" :disabled="loading">
+        <svg x-show="loading" class="animate-spin mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+        <span x-text="loading ? 'Enviando...' : 'Continuar'"></span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<script type="module" src="/src/main.js"></script>
 
 </body>
 </html>
