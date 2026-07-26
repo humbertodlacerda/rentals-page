@@ -459,35 +459,10 @@
       <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">Você só paga pelo que está rodando.</h2>
       <p class="mt-4 text-base-content/65 leading-relaxed">
         Preço por veículo ativo. Sem taxa de setup, sem fidelidade.
-        Pague mensal ou ganhe 2 meses no anual.
       </p>
     </div>
 
-    <!-- Billing toggle -->
-    <div class="flex justify-center mb-12" x-data="{ billing: 'annual' }" x-init="$watch('billing', v => $dispatch('billing-changed', v))">
-      <div class="inline-flex items-center gap-1 p-1 bg-base-100 border border-base-200 rounded-full shadow-sm">
-        <button type="button"
-                @click="billing = 'monthly'"
-                :class="billing === 'monthly' ? 'bg-primary text-primary-content shadow-sm' : 'text-base-content/65 hover:text-base-content'"
-                class="px-5 py-2 rounded-full text-sm font-semibold transition-all">
-          Mensal
-        </button>
-        <button type="button"
-                @click="billing = 'annual'"
-                :class="billing === 'annual' ? 'bg-primary text-primary-content shadow-sm' : 'text-base-content/65 hover:text-base-content'"
-                class="px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-2">
-          Anual
-          <span :class="billing === 'annual' ? 'bg-primary-content/20 text-primary-content' : 'bg-success/15 text-success'"
-                class="text-[10px] uppercase tracking-widest font-bold px-1.5 py-0.5 rounded-full transition-colors">
-            2 meses grátis
-          </span>
-        </button>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-6 items-stretch"
-         x-data="{ billing: 'annual' }"
-         @billing-changed.window="billing = $event.detail">
+    <div class="grid lg:grid-cols-3 gap-6 items-stretch">
 
       <!-- =================== PLANO STARTER =================== -->
       <article class="plan-card bg-base-100 border border-base-200 rounded-2xl p-7 flex flex-col">
@@ -505,16 +480,14 @@
         <div class="mb-6">
           <div class="flex items-baseline gap-1">
             <span class="text-sm font-medium text-base-content/55">R$</span>
-            <span class="text-5xl font-bold tracking-tight" x-text="billing === 'annual' ? '49' : '59'"></span>
+            <span class="text-5xl font-bold tracking-tight">59</span>
             <span class="text-2xl font-bold tracking-tight">,90</span>
           </div>
-          <div class="text-sm text-base-content/55 mt-1 flex flex-wrap items-center gap-x-2">
+          <div class="text-sm text-base-content/55 mt-1">
             <span>por veículo / mês</span>
-            <span x-show="billing === 'annual'" class="text-success font-semibold text-xs">no plano anual</span>
           </div>
           <div class="text-xs text-base-content/45 mt-1">
-            <span x-show="billing === 'annual'">Cobrado anualmente</span>
-            <span x-show="billing === 'monthly'">Cobrado mensalmente</span>
+            <span>Cobrado mensalmente</span>
           </div>
         </div>
 
@@ -535,8 +508,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-success shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
             <span>Suporte por e-mail em horário comercial</span>
           </li>
-          <li class="flex items-start gap-2.5 text-base-content/45">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <li class="flex items-start gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-success shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
             <span>Dispositivos IoT (rastreio em tempo real)</span>
           </li>
         </ul>
@@ -568,16 +541,14 @@
         <div class="mb-6">
           <div class="flex items-baseline gap-1">
             <span class="text-sm font-medium text-base-content/55">R$</span>
-            <span class="text-5xl font-bold tracking-tight text-primary" x-text="billing === 'annual' ? '41' : '49'"></span>
+            <span class="text-5xl font-bold tracking-tight text-primary">49</span>
             <span class="text-2xl font-bold tracking-tight text-primary">,90</span>
           </div>
-          <div class="text-sm text-base-content/55 mt-1 flex flex-wrap items-center gap-x-2">
+          <div class="text-sm text-base-content/55 mt-1">
             <span>por veículo / mês</span>
-            <span x-show="billing === 'annual'" class="text-success font-semibold text-xs">no plano anual</span>
           </div>
           <div class="text-xs text-base-content/45 mt-1">
-            <span x-show="billing === 'annual'">Cobrado anualmente</span>
-            <span x-show="billing === 'monthly'">Cobrado mensalmente</span>
+            <span>Cobrado mensalmente</span>
           </div>
         </div>
 
