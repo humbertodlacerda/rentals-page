@@ -60,7 +60,7 @@ Alpine.start()
 
 document.addEventListener('DOMContentLoaded', () => {
   const loginLink = document.getElementById('nav-login')
-  if (loginLink) loginLink.href = `${APP_URL}/login`
+  if (loginLink) loginLink.href = `${APP_URL}/auth/login`
 
   document.querySelectorAll('[data-contact-email]').forEach(el => {
     el.href = `mailto:${CONTACT_EMAIL}`
