@@ -6,6 +6,16 @@
       "source": "/auth/:path*",
       "destination": "https://app.loksys.com.br/auth/:path*",
       "permanent": false
+    },
+    {
+      "source": "/forgot-password",
+      "destination": "https://app.loksys.com.br/forgot-password",
+      "permanent": false
+    },
+    {
+      "source": "/reset-password",
+      "destination": "https://app.loksys.com.br/reset-password",
+      "permanent": false
     }
   ]
 }
