@@ -2,25 +2,25 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "redirects": [
-    {
-      "source": "/auth/:path*",
-      "destination": "https://app.loksys.com.br/auth/:path*",
-      "permanent": false
-    },
-    {
-      "source": "/forgot-password",
-      "destination": "https://app.loksys.com.br/forgot-password",
-      "permanent": false
-    },
-    {
-      "source": "/reset-password",
-      "destination": "https://app.loksys.com.br/reset-password",
-      "permanent": false
-    },
     {                                                                                                                                                                                 
-      "source": "/api/:path*",                                                                                                                                                        
-      "destination": "https://app.loksys.com.br/api/:path*",                                                                                                                          
-      "permanent": false                                                                                                                                                              
-    }
-  ]
-}
+        "source": "/auth/:path*",                                                                                                                                                       
+        "destination": "https://app.loksys.com.br/auth/:path*",                                                                                                                         
+        "permanent": false                                                                                                                                                              
+      },                                                                                                                                                                                
+      {                                                                                                                                                                                 
+        "source": "/forgot-password",                                                                                                                                                   
+        "destination": "https://app.loksys.com.br/forgot-password",                                                                                                                     
+        "permanent": false                                                                                                                                                              
+      },{                                                                                                                                                                                 
+        "source": "/reset-password",                                                                                                                                                    
+        "destination": "https://app.loksys.com.br/reset-password",                                                                                                                      
+        "permanent": false                                                                                                                                                              
+      }                                                                                                                                                                                 
+    ],                                                                                                                                                                                  
+    "rewrites": [                                                                                                                                                                       
+      {                                                                                                                                                                                 
+        "source": "/api/:path*",                                                                                                                                                        
+        "destination": "https://app.loksys.com.br/api/:path*"                                                                                                                           
+      }                                                                                                                                                                                 
+    ]                                                                                                                                                                                   
+  }   
