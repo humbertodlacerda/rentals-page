@@ -16,6 +16,11 @@
       "source": "/reset-password",
       "destination": "https://app.loksys.com.br/reset-password",
       "permanent": false
+    },
+    {                                                                                                                                                                                 
+      "source": "/api/:path*",                                                                                                                                                        
+      "destination": "https://app.loksys.com.br/api/:path*",                                                                                                                          
+      "permanent": false                                                                                                                                                              
     }
   ]
 }
