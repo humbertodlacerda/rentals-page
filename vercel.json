@@ -15,12 +15,10 @@
         "source": "/reset-password",                                                                                                                                                    
         "destination": "https://app.loksys.com.br/reset-password",                                                                                                                      
         "permanent": false                                                                                                                                                              
-      }                                                                                                                                                                                 
-    ],                                                                                                                                                                                  
-    "rewrites": [                                                                                                                                                                       
+      },
       {                                                                                                                                                                                 
         "source": "/api/:path*",                                                                                                                                                        
         "destination": "https://app.loksys.com.br/api/:path*"                                                                                                                           
-      }                                                                                                                                                                                 
-    ]                                                                                                                                                                                   
+      }
+    ]                                                                                                                                                                              
   }   
