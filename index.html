@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Loksys — O painel da sua locadora, em um só lugar</title>
+<link rel="icon" type="image/png" href="/loksys-logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,18 +21,18 @@
           mono: ['JetBrains Mono','ui-monospace','SFMono-Regular','monospace'],
         },
         colors: {
-          'base-100': 'hsl(var(--b1) / <alpha-value>)',
-          'base-200': 'hsl(var(--b2) / <alpha-value>)',
-          'base-300': 'hsl(var(--b3) / <alpha-value>)',
-          'base-content': 'hsl(var(--bc) / <alpha-value>)',
-          primary: 'hsl(var(--p) / <alpha-value>)',
-          'primary-content': 'hsl(var(--pc) / <alpha-value>)',
-          secondary: 'hsl(var(--s) / <alpha-value>)',
-          neutral: 'hsl(var(--n) / <alpha-value>)',
-          info: 'hsl(var(--in) / <alpha-value>)',
-          success: 'hsl(var(--su) / <alpha-value>)',
-          warning: 'hsl(var(--wa) / <alpha-value>)',
-          error: 'hsl(var(--er) / <alpha-value>)',
+          'base-100': 'oklch(var(--b1) / <alpha-value>)',
+          'base-200': 'oklch(var(--b2) / <alpha-value>)',
+          'base-300': 'oklch(var(--b3) / <alpha-value>)',
+          'base-content': 'oklch(var(--bc) / <alpha-value>)',
+          primary: 'oklch(var(--p) / <alpha-value>)',
+          'primary-content': 'oklch(var(--pc) / <alpha-value>)',
+          secondary: 'oklch(var(--s) / <alpha-value>)',
+          neutral: 'oklch(var(--n) / <alpha-value>)',
+          info: 'oklch(var(--in) / <alpha-value>)',
+          success: 'oklch(var(--su) / <alpha-value>)',
+          warning: 'oklch(var(--wa) / <alpha-value>)',
+          error: 'oklch(var(--er) / <alpha-value>)',
         }
       }
     }
@@ -41,14 +42,14 @@
 <style>
   html[data-theme="loksys"] {
     color-scheme: light;
-    --b1: 0 0% 98%; --b2: 240 5% 96%; --b3: 240 5% 90%; --bc: 240 6% 13%;
-    --p:  220 65% 55%;  --pc: 0 0% 98%;
-    --s:  15 75% 60%;   --sc: 0 0% 98%;
-    --n:  240 6% 25%;   --nc: 0 0% 98%;
-    --in: 198 93% 60%; --inc: 198 100% 12%;
-    --su: 158 64% 52%; --suc: 158 100% 10%;
-    --wa: 43  96% 56%; --wac: 30  100% 11%;
-    --er: 0   91% 71%; --erc: 0   100% 14%;
+    --b1: 98.4805% 0.0000 89.88; --b2: 96.8309% 0.0014 286.37; --b3: 92.0282% 0.0034 286.33; --bc: 24.1644% 0.0075 285.82;
+    --p:  57.4087% 0.1620 262.48;  --pc: 98.4805% 0 89.88;
+    --s:  68.1198% 0.1523 38.90;   --sc: 98.4805% 0 89.88;
+    --n:  35.8824% 0.0131 285.72;  --nc: 98.4805% 0 89.88;
+    --in: 75.8362% 0.1373 231.60; --inc: 27.1138% 0.0557 232.54;
+    --su: 77.3320% 0.1523 163.30; --suc: 28.3860% 0.0620 162.30;
+    --wa: 83.3412% 0.1641 83.87;  --wac: 26.0102% 0.0600 61.79;
+    --er: 71.2296% 0.1656 22.18;  --erc: 25.0820% 0.1029 29.23;
     --rounded-box: .5rem; --rounded-btn: .5rem; --rounded-badge: 1.9rem;
     --btn-text-case: none;
   }
@@ -59,8 +60,8 @@
   [x-cloak] { display: none !important; }
 
   /* btn-soft fallback */
-  .btn-soft.btn-primary { background: hsl(var(--p) / .12); color: hsl(var(--p)); border-color: transparent; }
-  .btn-soft.btn-primary:hover { background: hsl(var(--p) / .2); }
+  .btn-soft.btn-primary { background: oklch(var(--p) / .12); color: oklch(var(--p)); border-color: transparent; }
+  .btn-soft.btn-primary:hover { background: oklch(var(--p) / .2); }
 
   /* Hero gradient — blue tones (same family as login) */
   .hero-bg {
@@ -75,8 +76,8 @@
   .hero-grid {
     position: absolute; inset: 0;
     background-image:
-      linear-gradient(hsl(var(--bc) / .04) 1px, transparent 1px),
-      linear-gradient(90deg, hsl(var(--bc) / .04) 1px, transparent 1px);
+      linear-gradient(oklch(var(--bc) / .04) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(var(--bc) / .04) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: radial-gradient(60% 60% at 50% 40%, black 0%, transparent 75%);
     -webkit-mask-image: radial-gradient(60% 60% at 50% 40%, black 0%, transparent 75%);
@@ -88,24 +89,24 @@
     display: inline-flex; align-items: center; gap: .5rem;
     font-size: 11px; font-weight: 700; text-transform: uppercase;
     letter-spacing: .12em;
-    color: hsl(var(--p));
-    background: hsl(var(--p) / .1);
+    color: oklch(var(--p));
+    background: oklch(var(--p) / .1);
     padding: .3rem .65rem;
     border-radius: 999px;
   }
 
   /* Pricing card */
   .plan-card { transition: transform .25s ease, box-shadow .25s ease; }
-  .plan-card:hover { transform: translateY(-4px); box-shadow: 0 22px 50px -25px hsl(var(--bc) / .25); }
+  .plan-card:hover { transform: translateY(-4px); box-shadow: 0 22px 50px -25px oklch(var(--bc) / .25); }
   .plan-card.is-featured {
-    border-color: hsl(var(--p) / .35);
-    box-shadow: 0 22px 50px -20px hsl(var(--p) / .35);
+    border-color: oklch(var(--p) / .35);
+    box-shadow: 0 22px 50px -20px oklch(var(--p) / .35);
   }
 
   /* Decorative product mockup card */
   .mockup-shell {
     background: hsl(0 0% 100%);
-    border: 1px solid hsl(var(--b3));
+    border: 1px solid oklch(var(--b3));
     border-radius: 14px;
     overflow: hidden;
     box-shadow:
@@ -114,13 +115,13 @@
   }
   .mockup-tabbar {
     height: 32px;
-    background: hsl(var(--b2));
-    border-bottom: 1px solid hsl(var(--b3));
+    background: oklch(var(--b2));
+    border-bottom: 1px solid oklch(var(--b3));
     display: flex; align-items: center; gap: 6px; padding: 0 10px;
   }
   .mockup-tabbar i {
     width: 10px; height: 10px; border-radius: 50%;
-    background: hsl(var(--b3));
+    background: oklch(var(--b3));
     display: inline-block;
   }
   .mockup-tabbar i:nth-child(1) { background: hsl(0 70% 70%); }
@@ -128,7 +129,7 @@
   .mockup-tabbar i:nth-child(3) { background: hsl(140 50% 60%); }
 
   /* Tiny chart bars in mockup */
-  .bar { background: hsl(var(--p) / .8); border-radius: 3px 3px 0 0; }
+  .bar { background: oklch(var(--p) / .8); border-radius: 3px 3px 0 0; }
 
   /* Float anim for stickers */
   @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
@@ -144,7 +145,7 @@
 <header class="sticky top-0 z-30 bg-base-100/85 backdrop-blur border-b border-base-200/70">
   <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center gap-6">
     <a href="#" class="flex items-center gap-2.5">
-      <div class="w-9 h-9 rounded-lg bg-primary text-primary-content flex items-center justify-center font-black text-base shadow-sm">L</div>
+      <img src="/loksys-logo.png" alt="Loksys" class="w-9 h-9 rounded-lg shadow-sm">
       <span class="font-bold tracking-tight">Loksys</span>
     </a>
 
@@ -156,7 +157,7 @@
     </nav>
 
     <div class="ml-auto flex items-center gap-2">
-      <a id="nav-login" href="#" class="btn btn-ghost btn-sm font-medium">Entrar</a>
+      <a id="nav-login" href="#" class="btn btn-outline btn-primary btn-sm font-medium">Entrar</a>
       <a href="#planos" class="btn btn-primary btn-sm font-semibold shadow-sm shadow-primary/20">
         Ver planos
       </a>
@@ -225,7 +226,7 @@
             <!-- mini sidebar -->
             <div class="bg-base-100 border-r border-base-200 p-3 text-[10px] hidden sm:block">
               <div class="flex items-center gap-1.5 mb-3">
-                <div class="w-5 h-5 rounded bg-primary text-primary-content text-[8px] flex items-center justify-center font-black">L</div>
+                <img src="/loksys-logo.png" alt="Loksys" class="w-5 h-5 rounded">
                 <span class="font-bold">Havalugue</span>
               </div>
               <ul class="space-y-1 text-base-content/70">
@@ -530,7 +531,7 @@
         <div class="mb-6">
           <div class="flex items-center gap-2 mb-1">
             <h3 class="text-lg font-bold">Business</h3>
-            <span class="badge badge-sm badge-soft badge-primary rounded-md font-medium">até 50 veículos</span>
+            <span class="badge badge-sm badge-soft badge-primary rounded-md font-medium">até 20 veículos</span>
           </div>
           <p class="text-sm text-base-content/60 leading-relaxed">
             Para locadoras em crescimento, com rastreio IoT, automações e
@@ -819,7 +820,7 @@
   <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
     <div class="lg:col-span-2">
       <div class="flex items-center gap-2.5 mb-4">
-        <div class="w-9 h-9 rounded-lg bg-primary text-primary-content flex items-center justify-center font-black text-base">L</div>
+        <img src="/loksys-logo.png" alt="Loksys" class="w-9 h-9 rounded-lg">
         <span class="font-bold text-base">Loksys</span>
       </div>
       <p class="text-base-content/60 leading-relaxed max-w-sm">
@@ -871,59 +872,112 @@
 <div x-data="planModal" x-show="open" x-cloak
      class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4"
      @keydown.escape.window="close()">
-  <div class="bg-base-100 rounded-2xl shadow-2xl w-full max-w-md"
+  <div class="bg-base-100 rounded-2xl shadow-2xl w-full max-w-4xl grid md:grid-cols-2 max-h-[92vh] overflow-hidden"
        @click.outside="close()">
 
-    <!-- Cabeçalho -->
-    <div class="flex items-center justify-between p-6 pb-0">
-      <div>
-        <p class="text-xs uppercase tracking-widest font-bold text-base-content/45 mb-1">Plano selecionado</p>
-        <h3 class="text-xl font-bold" x-text="planLabel"></h3>
+    <!-- Coluna esquerda: resumo do plano -->
+    <div class="bg-base-200/60 p-8 md:p-10 overflow-y-auto flex flex-col">
+      <div class="flex items-center gap-2.5 mb-8">
+        <img src="/loksys-logo.png" alt="Loksys" class="w-9 h-9 rounded-lg shadow-sm">
+        <span class="font-bold tracking-tight">Loksys</span>
       </div>
-      <button @click="close()" class="btn btn-ghost btn-sm btn-circle text-base-content/50">
+
+      <p class="text-xs uppercase tracking-widest font-bold text-base-content/45 mb-2">Plano selecionado</p>
+      <h3 class="text-2xl font-bold mb-1" x-text="planData.label"></h3>
+
+      <div class="mt-6 mb-8">
+        <template x-if="planData.priceCustom">
+          <div class="flex items-center gap-2">
+            <span class="text-3xl font-bold tracking-tight" x-text="planData.priceCustom"></span>
+            <span x-show="planData.badge" class="badge badge-sm rounded-full font-medium bg-base-100 border border-base-300 px-3" x-text="planData.badge"></span>
+          </div>
+        </template>
+        <template x-if="!planData.priceCustom">
+          <div class="flex items-baseline gap-2">
+            <div class="flex items-baseline gap-1">
+              <span class="text-sm font-medium text-base-content/55">R$</span>
+              <span class="text-5xl font-bold tracking-tight" x-text="priceWhole"></span>
+              <span class="text-2xl font-bold tracking-tight" x-text="','+priceCents"></span>
+            </div>
+            <span x-show="planData.badge" class="badge badge-sm rounded-full font-medium bg-base-100 border border-base-300 px-3" x-text="planData.badge"></span>
+          </div>
+        </template>
+        <div class="text-sm text-base-content/55 mt-1" x-show="planData.unit" x-text="planData.unit"></div>
+        <div class="text-xs text-base-content/45 mt-1" x-text="planData.billing"></div>
+      </div>
+
+      <ul class="space-y-2.5 text-sm">
+        <template x-for="feature in planData.features" :key="feature">
+          <li class="flex items-start gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-success shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span x-text="feature"></span>
+          </li>
+        </template>
+      </ul>
+
+      <p class="mt-auto pt-6 text-xs text-base-content/50 leading-relaxed border-t border-base-content/10 mt-8" x-text="planData.footnote"></p>
+    </div>
+
+    <!-- Coluna direita: formulário -->
+    <div class="p-8 md:p-10 overflow-y-auto relative">
+      <button @click="close()" class="btn btn-ghost btn-sm btn-circle absolute top-4 right-4 text-base-content/50">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
+
+      <!-- Sucesso -->
+      <div x-show="success" class="text-center py-10">
+        <div class="w-16 h-16 bg-success/15 text-success rounded-full flex items-center justify-center mx-auto mb-5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4 class="font-bold text-lg mb-2">Recebemos seu contato!</h4>
+        <p class="text-base-content/60 text-sm leading-relaxed">Nossa equipe vai entrar em contato em breve para finalizar sua assinatura.</p>
+        <button @click="close()" class="btn btn-primary mt-6 px-8">Fechar</button>
+      </div>
+
+      <!-- Formulário -->
+      <div x-show="!success">
+        <h3 class="text-2xl font-bold mb-2 pr-10">Criar sua conta</h3>
+        <p class="text-base-content/60 text-sm leading-relaxed mb-8">Preencha os dados abaixo e nossa equipe libera seu ambiente em até 24h.</p>
+
+        <form @submit.prevent="submit()" class="space-y-4">
+          <div>
+            <label class="block text-sm font-semibold mb-1.5">Nome completo</label>
+            <input type="text" x-model="form.name" placeholder="Como podemos te chamar" required
+                   class="input input-bordered w-full" autocomplete="name">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1.5">E-mail corporativo</label>
+            <input type="email" x-model="form.email" placeholder="voce@sualocadora.com.br" required
+                   class="input input-bordered w-full" autocomplete="email">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1.5">WhatsApp</label>
+            <input type="tel" :value="form.phone" @input="maskPhone($event)" placeholder="(11) 91234-5678" required
+                   inputmode="numeric" maxlength="16" class="input input-bordered w-full" autocomplete="tel">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-1.5">Nome da locadora</label>
+            <input type="text" x-model="form.company" placeholder="Locadora Exemplo Ltda"
+                   class="input input-bordered w-full">
+          </div>
+
+          <div x-show="error" class="text-error text-sm flex items-center gap-2 pt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span x-text="error"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-full h-12 font-semibold gap-2" :disabled="loading">
+            <svg x-show="loading" class="animate-spin" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
+            <span x-text="loading ? 'Enviando...' : 'Continuar'"></span>
+            <svg x-show="!loading" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+
+          <p class="text-xs text-center text-base-content/45 leading-relaxed">
+            Ao continuar você concorda com os <a href="#" class="underline hover:text-base-content/70">Termos de uso</a> e a <a href="/politica-e-privacidade" class="underline hover:text-base-content/70">Política de privacidade</a>.
+          </p>
+        </form>
+      </div>
     </div>
-
-    <!-- Sucesso -->
-    <div x-show="success" class="text-center px-8 py-10">
-      <div class="w-16 h-16 bg-success/15 text-success rounded-full flex items-center justify-center mx-auto mb-5">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h4 class="font-bold text-lg mb-2">Recebemos seu contato!</h4>
-      <p class="text-base-content/60 text-sm leading-relaxed">Nossa equipe vai entrar em contato em breve para finalizar sua assinatura.</p>
-      <button @click="close()" class="btn btn-primary mt-6 px-8">Fechar</button>
-    </div>
-
-    <!-- Formulário -->
-    <form x-show="!success" @submit.prevent="submit()" class="p-6 space-y-4">
-      <div>
-        <input type="text" x-model="form.name" placeholder="Nome completo" required
-               class="input input-bordered w-full" autocomplete="name">
-      </div>
-      <div>
-        <input type="email" x-model="form.email" placeholder="E-mail" required
-               class="input input-bordered w-full" autocomplete="email">
-      </div>
-      <div>
-        <input type="tel" x-model="form.phone" placeholder="WhatsApp (com DDD)" required
-               class="input input-bordered w-full" autocomplete="tel">
-      </div>
-      <div>
-        <input type="text" x-model="form.company" placeholder="Nome da locadora"
-               class="input input-bordered w-full">
-      </div>
-
-      <div x-show="error" class="text-error text-sm flex items-center gap-2 pt-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <span x-text="error"></span>
-      </div>
-
-      <button type="submit" class="btn btn-primary w-full h-12 font-semibold" :disabled="loading">
-        <svg x-show="loading" class="animate-spin mr-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-6.219-8.56"/></svg>
-        <span x-text="loading ? 'Enviando...' : 'Continuar'"></span>
-      </button>
-    </form>
   </div>
 </div>
 
