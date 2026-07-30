@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="loksys">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade — Loksys</title>
+<meta name="description" content="Política de Privacidade da Loksys Tecnologia e Inovação Ltda — como coletamos, usamos e protegemos seus dados, em conformidade com a LGPD.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Inter','ui-sans-serif','system-ui','sans-serif'],
+          mono: ['JetBrains Mono','ui-monospace','SFMono-Regular','monospace'],
+        },
+        colors: {
+          'base-100': 'hsl(var(--b1) / <alpha-value>)',
+          'base-200': 'hsl(var(--b2) / <alpha-value>)',
+          'base-300': 'hsl(var(--b3) / <alpha-value>)',
+          'base-content': 'hsl(var(--bc) / <alpha-value>)',
+          primary: 'hsl(var(--p) / <alpha-value>)',
+          'primary-content': 'hsl(var(--pc) / <alpha-value>)',
+          secondary: 'hsl(var(--s) / <alpha-value>)',
+          neutral: 'hsl(var(--n) / <alpha-value>)',
+          info: 'hsl(var(--in) / <alpha-value>)',
+          success: 'hsl(var(--su) / <alpha-value>)',
+          warning: 'hsl(var(--wa) / <alpha-value>)',
+          error: 'hsl(var(--er) / <alpha-value>)',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  html[data-theme="loksys"] {
+    color-scheme: light;
+    --b1: 0 0% 98%; --b2: 240 5% 96%; --b3: 240 5% 90%; --bc: 240 6% 13%;
+    --p:  220 65% 55%;  --pc: 0 0% 98%;
+    --s:  15 75% 60%;   --sc: 0 0% 98%;
+    --n:  240 6% 25%;   --nc: 0 0% 98%;
+    --in: 198 93% 60%; --inc: 198 100% 12%;
+    --su: 158 64% 52%; --suc: 158 100% 10%;
+    --wa: 43  96% 56%; --wac: 30  100% 11%;
+    --er: 0   91% 71%; --erc: 0   100% 14%;
+    --rounded-box: .5rem; --rounded-btn: .5rem; --rounded-badge: 1.9rem;
+    --btn-text-case: none;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; }
+  .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: .5rem;
+    font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .12em;
+    color: hsl(var(--p));
+    background: hsl(var(--p) / .1);
+    padding: .3rem .65rem;
+    border-radius: 999px;
+  }
+
+  .doc h2 {
+    font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em;
+    margin-top: 2.25rem; margin-bottom: .75rem;
+    padding-top: 1.5rem; border-top: 1px solid hsl(var(--b2));
+  }
+  .doc > :first-child h2, .doc h2:first-of-type { margin-top: 0; padding-top: 0; border-top: none; }
+  .doc p, .doc li { color: hsl(var(--bc) / .7); line-height: 1.65; font-size: .9375rem; }
+  .doc p { margin-bottom: .6rem; }
+  .doc ul, .doc ol { margin: .4rem 0 .8rem 1.2rem; }
+  .doc ul { list-style: disc; }
+  .doc ol { list-style: decimal; }
+  .doc li { margin-bottom: .35rem; }
+  .doc strong { color: hsl(var(--bc)); font-weight: 600; }
+  .doc a { color: hsl(var(--p)); text-decoration: underline; text-underline-offset: 2px; }
+  .doc .note {
+    background: hsl(var(--p) / .05); border: 1px solid hsl(var(--p) / .15);
+    border-radius: .6rem; padding: 1rem 1.15rem; font-size: .875rem;
+    color: hsl(var(--bc) / .8); margin: .8rem 0 1.2rem;
+  }
+</style>
+</head>
+<body class="bg-base-100 text-base-content antialiased">
+
+<!-- ==================================================================== -->
+<!--  TOP NAV                                                              -->
+<!-- ==================================================================== -->
+<header class="sticky top-0 z-30 bg-base-100/85 backdrop-blur border-b border-base-200/70">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center gap-6">
+    <a href="/" class="flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-lg bg-primary text-primary-content flex items-center justify-center font-black text-base shadow-sm">L</div>
+      <span class="font-bold tracking-tight">Loksys</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-7 text-sm text-base-content/70 ml-6">
+      <a href="/#funcionalidades" class="hover:text-base-content transition-colors">Funcionalidades</a>
+      <a href="/#como-funciona" class="hover:text-base-content transition-colors">Como funciona</a>
+      <a href="/#planos" class="hover:text-base-content transition-colors">Planos</a>
+      <a href="/#faq" class="hover:text-base-content transition-colors">FAQ</a>
+    </nav>
+
+    <div class="ml-auto flex items-center gap-2">
+      <a id="nav-login" href="#" class="btn btn-ghost btn-sm font-medium">Entrar</a>
+      <a href="/#planos" class="btn btn-primary btn-sm font-semibold shadow-sm shadow-primary/20">
+        Ver planos
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ==================================================================== -->
+<!--  POLÍTICA DE PRIVACIDADE                                              -->
+<!-- ==================================================================== -->
+<main class="max-w-3xl mx-auto px-5 sm:px-8 py-14 lg:py-20">
+  <a href="/" class="inline-flex items-center gap-1.5 text-sm text-base-content/55 hover:text-base-content mb-8">
+    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    Voltar ao início
+  </a>
+
+  <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Política de Privacidade</h1>
+  <p class="mt-2 text-xs font-mono text-base-content/45">Última atualização: 30/07/2026</p>
+
+  <div class="doc mt-10">
+    <div class="note">
+      <strong>Controladora:</strong> LOKSYS TECNOLOGIA E INOVAÇÃO LTDA<br>
+      <strong>CNPJ:</strong> 67.731.081/0001-70<br>
+      <strong>Endereço:</strong> Av. Brasil, 3261, sala A, Centro, Governador Valadares/MG, CEP 35.010-070<br>
+      <strong>Encarregado (DPO):</strong> <a href="mailto:suporte@loksys.com.br">suporte@loksys.com.br</a><br>
+      <strong>Suporte:</strong> <a href="mailto:suporte@loksys.com.br">suporte@loksys.com.br</a><br>
+      <strong>Plataforma:</strong> loksys.com.br, subdomínios de clientes (*.loksys.com.br), aplicativo mobile Loksys (com.loksys.app)
+    </div>
+
+    <h2>1. Escopo</h2>
+    <p>Este documento explica como a <strong>Loksys Tecnologia e Inovação Ltda</strong> ("Loksys", "nós") coleta, usa, compartilha e protege dados pessoais no uso da plataforma web de rastreamento veicular e gestão de frotas, do aplicativo mobile e dos serviços relacionados, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 — LGPD).</p>
+    <p>A Loksys opera em modelo <strong>multi-tenant (SaaS)</strong>: cada Cliente (empresa contratante) possui seu próprio ambiente isolado, sendo o Cliente responsável pelos dados de seus próprios usuários, condutores e veículos que insere na plataforma.</p>
+
+    <h2>2. Quais dados coletamos</h2>
+    <ul>
+      <li><strong>Cadastro e identificação:</strong> nome, e-mail, telefone, CPF/CNPJ, empresa, cargo, credenciais de acesso.</li>
+      <li><strong>Dados operacionais e de frota:</strong> informações de veículos (placa, modelo, chassi), motoristas/condutores, contratos, manutenções, cobranças e demais registros inseridos pelo Cliente na plataforma.</li>
+      <li><strong>Dados de localização (GPS):</strong> dados de posicionamento geográfico transmitidos pelos rastreadores instalados nos veículos, incluindo latitude, longitude, velocidade, direção e histórico de trajetos — essenciais ao funcionamento do serviço de rastreamento e monitoramento de frota.</li>
+      <li><strong>Dados de dispositivo e uso:</strong> logs de acesso, endereço IP, identificadores de dispositivo, sistema operacional, versão do aplicativo, dados de performance e diagnóstico/crash.</li>
+      <li><strong>Comunicações e suporte:</strong> mensagens, anexos e metadados trocados pelos canais de atendimento (e-mail, WhatsApp, chat).</li>
+      <li><strong>Notificações push:</strong> identificadores de dispositivo (token) para envio de alertas de rastreamento, manutenção e cobrança.</li>
+    </ul>
+    <p>A Loksys não realiza a coleta de dados pessoais sensíveis, como origem racial, convicção religiosa, dados de saúde ou biometria. Caso o Cliente insira esse tipo de dado na plataforma, assumirá integral responsabilidade por sua base legal e proteção. Caso a Loksys venha a tratar dados biométricos (por exemplo, para fins de verificação de identidade — KYC), isso ocorrerá com base no consentimento específico e destacado do titular ou para garantia da prevenção à fraude e segurança dos sistemas de autenticação, conforme art. 11, II, "g", da LGPD — e esta política será atualizada previamente para refletir essa mudança.</p>
+    <div class="note"><strong>Observação:</strong> o Cliente pode inserir dados pessoais de terceiros (ex.: condutores, locatários, funcionários) na plataforma. Nessa hipótese, o Cliente atua como Controlador desses dados e deve possuir base legal adequada para o tratamento (execução de contrato, legítimo interesse ou consentimento, conforme o caso). A Loksys atua como Operadora desses dados, tratando-os conforme as instruções do Cliente — o que não afasta a responsabilidade da Loksys perante o titular dos dados e a Autoridade Nacional de Proteção de Dados (ANPD): nos termos do art. 42 da LGPD, Cliente e Loksys podem responder solidariamente por danos decorrentes de um incidente de segurança relacionado ao tratamento realizado na plataforma.</div>
+
+    <h2>3. Bases legais e finalidades</h2>
+    <p>Tratamos dados pessoais para:</p>
+    <ol>
+      <li><strong>Execução de contrato</strong> com o Cliente — provisionar acesso à plataforma, operar as funcionalidades de rastreamento e gestão de frota, faturamento e cobrança recorrente.</li>
+      <li><strong>Cumprimento de obrigação legal ou regulatória</strong> — obrigações fiscais, contábeis e atendimento a requisições de autoridades.</li>
+      <li><strong>Legítimo interesse</strong> — segurança da plataforma, prevenção a fraudes, melhoria contínua do produto e geração de estatísticas agregadas e anonimizadas.</li>
+      <li><strong>Consentimento</strong>, quando exigido — como envio de notificações push e uso de localização em segundo plano pelo aplicativo mobile. O consentimento pode ser revogado a qualquer momento nas configurações do app ou por solicitação ao suporte.</li>
+    </ol>
+
+    <h2>4. Localização em segundo plano</h2>
+    <p>O aplicativo mobile da Loksys pode solicitar permissão de localização em segundo plano quando essa funcionalidade for necessária para o serviço contratado pelo Cliente (ex.: checagens operacionais de motoristas). Essa coleta só ocorre mediante consentimento explícito do usuário do dispositivo e pode ser revogada a qualquer momento nas configurações do sistema operacional.</p>
+    <p>Os dados de localização dos <strong>veículos rastreados</strong> (equipamentos GT06/Concox e similares instalados nos veículos) são tratados separadamente, como parte do serviço contratado pelo Cliente, e não dependem de consentimento individual do condutor, sendo de responsabilidade do Cliente informar os condutores sobre o rastreamento do veículo.</p>
+
+    <h2>5. Compartilhamento com terceiros</h2>
+    <p>Compartilhamos dados apenas quando necessário, com operadores que nos auxiliam na prestação do serviço:</p>
+    <ul>
+      <li>Infraestrutura de nuvem e hospedagem (VPS, Docker).</li>
+      <li>Provedores de DNS e proteção contra ataques (Cloudflare).</li>
+      <li>Processamento de pagamentos e cobrança recorrente (Asaas).</li>
+      <li>Envio de e-mails transacionais.</li>
+      <li>Envio de SMS para comandos e alertas de rastreamento (SMSMarket).</li>
+      <li>Mensageria (WhatsApp, notificações push).</li>
+      <li>Serviços de mapas e geolocalização.</li>
+    </ul>
+    <p>O compartilhamento com esses operadores tem como base legal a execução do contrato firmado com o Cliente (art. 7º, V, da LGPD) e, quando aplicável, o legítimo interesse da Loksys na manutenção, segurança e prevenção a fraudes na plataforma (art. 7º, IX, da LGPD).</p>
+    <p>Esses terceiros tratam os dados conforme nossas instruções e contratos, com medidas de segurança e confidencialidade. Poderemos atender a requisições de autoridades públicas mediante solicitação legal.</p>
+    <p><strong>Não vendemos dados pessoais a terceiros.</strong></p>
+
+    <h2>6. Transferência internacional</h2>
+    <p>Caso haja transferência de dados para fora do Brasil (ex.: provedores de nuvem ou ferramentas com servidores no exterior), adotaremos salvaguardas adequadas, como cláusulas contratuais e avaliações de segurança, conforme exigido pela LGPD.</p>
+
+    <h2>7. Segurança</h2>
+    <p>Adotamos medidas técnicas e administrativas proporcionais aos riscos, incluindo:</p>
+    <ul>
+      <li>Controle de acesso por ambiente (multi-tenant com isolamento por domínio/Cliente).</li>
+      <li>Criptografia em trânsito (HTTPS/TLS).</li>
+      <li>Registros de acesso e autenticação.</li>
+      <li>Políticas internas de segurança da informação.</li>
+    </ul>
+
+    <h2>8. Retenção e eliminação</h2>
+    <p>Mantemos os dados pelo tempo necessário ao cumprimento das finalidades descritas nesta política e dos prazos legais aplicáveis (ex.: fiscais). Após o término da relação contratual, os dados são eliminados ou anonimizados conforme nossas políticas internas, ressalvadas obrigações legais de retenção.</p>
+    <p>Os registros de acesso à aplicação (logs) são mantidos sob sigilo, em ambiente controlado e de segurança, pelo prazo mínimo de 6 (seis) meses, em cumprimento ao art. 15 da Lei nº 12.965/2014 (Marco Civil da Internet).</p>
+    <p>O Cliente pode solicitar exportação e eliminação dos dados de sua conta, respeitados os prazos legais e obrigações contratuais e financeiras pendentes.</p>
+
+    <h2>9. Direitos do titular</h2>
+    <p>Nos termos da LGPD, você pode solicitar:</p>
+    <ul>
+      <li>Confirmação da existência de tratamento;</li>
+      <li>Acesso aos dados;</li>
+      <li>Correção de dados incompletos, inexatos ou desatualizados;</li>
+      <li>Anonimização, bloqueio ou eliminação de dados desnecessários ou excessivos;</li>
+      <li>Portabilidade dos dados;</li>
+      <li>Informação sobre compartilhamento com terceiros;</li>
+      <li>Revogação do consentimento;</li>
+      <li>Oposição a tratamento realizado com base em legítimo interesse, quando cabível.</li>
+    </ul>
+    <p>Para exercer esses direitos, entre em contato pelo e-mail <a href="mailto:suporte@loksys.com.br">suporte@loksys.com.br</a>.</p>
+
+    <h2>10. Exclusão de conta e dados</h2>
+    <p>Usuários com credenciais próprias na plataforma podem solicitar a exclusão de sua conta e dados por meio do canal de suporte (<a href="mailto:suporte@loksys.com.br">suporte@loksys.com.br</a>) ou diretamente nas configurações do aplicativo, em <strong>Configurações › Privacidade</strong>. A exclusão respeita prazos legais e obrigações financeiras pendentes junto ao Cliente contratante.</p>
+
+    <h2>11. Crianças e adolescentes</h2>
+    <p>A plataforma e o aplicativo Loksys não são destinados a menores de 18 anos, e não coletamos dados de crianças e adolescentes. A data de nascimento é solicitada exclusivamente para confirmar que o titular possui idade legal e habilitação para conduzir veículos — requisito indispensável para a contratação de locação veicular —, não havendo qualquer intenção de vínculo, tratamento ou armazenamento de dados de menores de idade.</p>
+
+    <h2>12. Cookies e tecnologias semelhantes</h2>
+    <p>Podemos utilizar cookies e tecnologias semelhantes para autenticação de sessão, preferências, segurança e estatísticas de uso. Você pode ajustar as permissões nas configurações do navegador ou do dispositivo.</p>
+
+    <h2>13. Alterações nesta política</h2>
+    <p>Esta Política de Privacidade poderá ser atualizada periodicamente. Alterações relevantes serão comunicadas aos usuários cadastrados pelos meios de contato registrados ou por aviso em destaque na plataforma.</p>
+
+    <div class="note" style="margin-top:1.5rem"><strong>Responsável pelo tratamento de dados:</strong><br>LOKSYS TECNOLOGIA E INOVAÇÃO LTDA<br>CNPJ: 67.731.081/0001-70<br>E-mail para contato: <a href="mailto:suporte@loksys.com.br">suporte@loksys.com.br</a></div>
+  </div>
+</main>
+
+<!-- ==================================================================== -->
+<!--  FOOTER                                                               -->
+<!-- ==================================================================== -->
+<footer class="bg-base-100 border-t border-base-200">
+  <div class="max-w-6xl mx-auto px-5 sm:px-8 py-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+    <div class="lg:col-span-2">
+      <div class="flex items-center gap-2.5 mb-4">
+        <div class="w-9 h-9 rounded-lg bg-primary text-primary-content flex items-center justify-center font-black text-base">L</div>
+        <span class="font-bold text-base">Loksys</span>
+      </div>
+      <p class="text-base-content/60 leading-relaxed max-w-sm">
+        O sistema de gestão para locadoras de veículos que quer crescer sem
+        perder controle. Frota, clientes, contratos e dispositivos em um só lugar.
+      </p>
+      <div class="mt-5 text-xs text-base-content/45 font-mono">
+        <span id="footer-email">contato@loksys.com.br</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="font-semibold mb-3">Produto</div>
+      <ul class="space-y-2 text-base-content/65">
+        <li><a href="/#funcionalidades" class="hover:text-base-content">Funcionalidades</a></li>
+        <li><a href="/#como-funciona" class="hover:text-base-content">Como funciona</a></li>
+        <li><a href="/#planos" class="hover:text-base-content">Planos</a></li>
+        <li><a href="login.html" class="hover:text-base-content">Entrar</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="font-semibold mb-3">Empresa</div>
+      <ul class="space-y-2 text-base-content/65">
+        <li><a href="/#" class="hover:text-base-content">Sobre</a></li>
+        <li><a href="/#" class="hover:text-base-content">Termos de uso</a></li>
+        <li><a href="/politica-e-privacidade" class="hover:text-base-content">Política de privacidade</a></li>
+        <li><a href="/#contato" class="hover:text-base-content">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-base-200">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-base-content/45">
+      <span>© 2026 Loksys · Todos os direitos reservados.</span>
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-success animate-pulse"></span>
+          Todos os sistemas operacionais
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="/src/main.js"></script>
+
+</body>
+</html>
