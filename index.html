@@ -462,10 +462,10 @@
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-3 gap-6 items-stretch">
+    <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-5 items-stretch">
 
       <!-- =================== PLANO STARTER =================== -->
-      <article class="plan-card bg-base-100 border border-base-200 rounded-2xl p-7 flex flex-col">
+      <article class="plan-card bg-base-100 border border-base-200 rounded-2xl p-6 flex flex-col">
         <div class="mb-6">
           <div class="flex items-center gap-2 mb-1">
             <h3 class="text-lg font-bold">Starter</h3>
@@ -520,7 +520,7 @@
       </article>
 
       <!-- =================== PLANO BUSINESS (featured) =================== -->
-      <article class="plan-card is-featured bg-base-100 border-2 rounded-2xl p-7 flex flex-col relative">
+      <article class="plan-card is-featured bg-base-100 border-2 rounded-2xl p-6 flex flex-col relative">
         <div class="absolute -top-3 left-1/2 -translate-x-1/2">
           <span class="bg-primary text-primary-content text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-md shadow-primary/30">
             Mais popular
@@ -582,7 +582,7 @@
       </article>
 
       <!-- =================== PLANO ENTERPRISE =================== -->
-      <article class="plan-card bg-base-100 border border-base-200 rounded-2xl p-7 flex flex-col">
+      <article class="plan-card bg-base-100 border border-base-200 rounded-2xl p-6 flex flex-col">
         <div class="mb-6">
           <div class="flex items-center gap-2 mb-1">
             <h3 class="text-lg font-bold">Enterprise</h3>
@@ -632,6 +632,60 @@
         </a>
       </article>
 
+      <!-- =================== PLANO ESSENTIAL =================== -->
+      <article class="plan-card bg-base-100 border border-base-200 rounded-2xl p-6 flex flex-col">
+        <div class="mb-6">
+          <div class="flex items-center gap-2 mb-1">
+            <h3 class="text-lg font-bold">Essential</h3>
+          </div>
+          <p class="text-sm text-base-content/60 leading-relaxed">
+            Para o seu veículo. Saiba onde está, receba alertas e
+            bloqueie à distância.
+          </p>
+        </div>
+
+        <div class="mb-6">
+          <div class="flex items-baseline gap-1">
+            <span class="text-sm font-medium text-base-content/55">R$</span>
+            <span class="text-5xl font-bold tracking-tight">39</span>
+            <span class="text-2xl font-bold tracking-tight">,90</span>
+          </div>
+          <div class="text-sm text-base-content/55 mt-1">
+            <span>por mês</span>
+          </div>
+          <div class="text-xs text-base-content/45 mt-1">
+            <span>Cobrado mensalmente</span>
+          </div>
+        </div>
+
+        <ul class="space-y-2.5 text-sm flex-1 mb-7">
+          <li class="flex items-start gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-success shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Rastreio em tempo real no app</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-success shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Alerta de ignição</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-success shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Bloqueio e desbloqueio remoto pelo app</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-success shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Alertas de velocidade</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-success shrink-0 mt-0.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Suporte por e-mail e WhatsApp</span>
+          </li>
+        </ul>
+
+        <a href="#" data-plan="essential" class="btn btn-outline border-base-content/15 hover:bg-base-200 hover:text-base-content hover:border-base-content/25 h-11 font-semibold">
+          Assinar agora
+        </a>
+      </article>
+
     </div>
 
     <!-- Pricing footnote -->
@@ -641,9 +695,8 @@
       </div>
       <div class="text-sm leading-relaxed text-base-content/70">
         <strong class="text-base-content">Sem surpresas no fim do mês.</strong>
-        Cobramos apenas pelos veículos cadastrados como ativos. Veículos em
-        manutenção ou inativos não contam para a cobrança. Cancele quando quiser,
-        sem multa.
+        Cobramos apenas pelos veículos cadastrados como ativos. Veículos
+        inativos não contam para a cobrança. Cancele quando quiser, sem multa.
       </div>
     </div>
   </div>
@@ -667,8 +720,8 @@
         </div>
         <div class="collapse-content text-sm text-base-content/70 leading-relaxed">
           A cobrança é feita mensalmente apenas pelos veículos cadastrados como
-          <strong>ativos</strong> no sistema. Se um veículo entrar em manutenção
-          ou for desativado, ele deixa de ser cobrado na próxima fatura.
+          <strong>ativos</strong> no sistema. Se um veículo for desativado,
+          ele deixa de ser cobrado na próxima fatura.
         </div>
       </div>
 

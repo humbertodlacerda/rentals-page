@@ -5,6 +5,7 @@ const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL
 const API_URL = import.meta.env.VITE_API_URL
 
 const PLAN_LABELS = {
+  essential: 'Essential',
   starter: 'Starter',
   business: 'Business',
   enterprise: 'Enterprise',
