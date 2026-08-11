@@ -25,6 +25,10 @@
       {
         "source": "/politica-e-privacidade",
         "destination": "/politica-e-privacidade.html"
+      },
+      {
+        "source": "/suporte",
+        "destination": "/suporte.html"
       }
     ]                                                                                                                                                                               
   }
